@@ -1,3 +1,5 @@
+import { systemApiPreResponseHandler, getSystemApiConfig, isSystemApiRequest } from './server/lib/system_apis';
+
 module.exports = function (kibana) {
   return new kibana.Plugin({
 
@@ -49,7 +51,14 @@ module.exports = function (kibana) {
           kbnIndex: options.index
         };
       },
+    },
+
+    init(server) {
+      server.ext('onPreResponse', systemApiPreResponseHandler);
+      server.expose('getSystemApiConfig', getSystemApiConfig);
+      server.expose('isSystemApiRequest', isSystemApiRequest);
     }
+
   });
 
 };
