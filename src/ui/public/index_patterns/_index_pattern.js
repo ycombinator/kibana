@@ -164,7 +164,6 @@ export default function IndexPatternFactory(Private, Notifier, config, kbnIndex,
       setId(this, id);
       docSources.set(this, new DocSource());
 
-      this.metaFields = config.get('metaFields');
       this.getComputedFields = getComputedFields.bind(this);
 
       this.flattenHit = flattenHit(this);
