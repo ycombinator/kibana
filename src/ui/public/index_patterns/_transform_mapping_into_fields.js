@@ -50,6 +50,7 @@ export default function transformMappingIntoFields(Private, kbnIndex, config) {
       field.mapping[meta] = { meta: true };
       fields[meta] = mapField(field, meta);
     });
+    config.set('metaFields', []);
 
     return _.map(fields, function (mapping, name) {
       mapping.name = name;
