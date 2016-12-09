@@ -5,7 +5,7 @@
   </a>
 
   <button
-    ng-if="field.scripted"
+    ng-if="field.scripted || field.meta"
     ng-click="remove(field)"
     class="btn btn-xs btn-danger"
     aria-label="Delete">
