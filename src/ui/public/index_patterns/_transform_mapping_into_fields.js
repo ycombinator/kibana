@@ -43,14 +43,6 @@ export default function transformMappingIntoFields(Private, kbnIndex, config) {
       });
     });
 
-    config.get('metaFields').forEach(function (meta) {
-      if (fields[meta]) return;
-
-      const field = { mapping: {} };
-      field.mapping[meta] = { meta: true };
-      fields[meta] = mapField(field, meta);
-    });
-
     return _.map(fields, function (mapping, name) {
       mapping.name = name;
 
