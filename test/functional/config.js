@@ -11,7 +11,8 @@ import {
   VisualizePageProvider,
   SettingsPageProvider,
   MonitoringPageProvider,
-  PointSeriesPageProvider
+  PointSeriesPageProvider,
+  GettingStartedPageProvider
 } from './page_objects';
 
 import {
@@ -50,7 +51,8 @@ export default function () {
       visualize: VisualizePageProvider,
       settings: SettingsPageProvider,
       monitoring: MonitoringPageProvider,
-      pointSeries: PointSeriesPageProvider
+      pointSeries: PointSeriesPageProvider,
+      gettingStarted: GettingStartedPageProvider,
     },
     services: {
       kibanaServer: KibanaServerProvider,
