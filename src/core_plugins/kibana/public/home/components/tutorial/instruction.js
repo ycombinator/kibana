@@ -51,6 +51,7 @@ export function Instruction({ commands, paramValues, textPost, textPre }) {
 }
 
 Instruction.propTypes = {
+  commands: PropTypes.array,
   paramValues: PropTypes.object.isRequired,
   textPost: PropTypes.string,
   textPre: PropTypes.string,
