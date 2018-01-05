@@ -45,6 +45,20 @@ export const COMMON_NETFLOW_INSTRUCTIONS = {
           ],
           textPost: 'Where `<password>` is the password of the `elastic` user.'
         }
+      ],
+      WINDOWS: [
+        {
+          title: 'Edit the configuration',
+          textPre: 'While in the Logstash install directory, modify `config\\logstash.yml` to set the'
+            + ' configuration parameters for the Netflow module:',
+          commands: [
+            'modules:',
+            '  - name: netflow',
+            '    var.input.udp.port: <udp_port_for_receving_netflow_data>',
+            '    cloud.id: "{config.cloud.id}"',
+            '    cloud.auth: "elastic:<password>"'
+          ]
+        }
       ]
     }
   },
