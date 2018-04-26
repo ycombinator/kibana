@@ -1,0 +1,758 @@
+{
+  "plugins": [
+    {
+      "name": "beats",
+      "type": "input",
+      "description": "Enables Logstash to receive events from the Elastic Beats framework",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        },
+        {
+          "name": "host",
+          "type": "string",
+          "defaultValue": "0.0.0.0"
+        },
+        {
+          "name": "port",
+          "type": "number",
+          "isRequired": true
+        },
+        {
+          "name": "ssl",
+          "type": "boolean",
+          "defaultValue": false
+        },
+        {
+          "name": "client_inactivity_timeout",
+          "type": "number",
+          "defaultValue": 60
+        }
+      ]
+    },
+    {
+      "name": "elasticsearch",
+      "type": "input",
+      "description": "Read from an Elasticsearch cluster, based on search query results",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "file",
+      "type": "input",
+      "description": "Stream events from files",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "generator",
+      "type": "input",
+      "description": "Generate random log events",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "heartbeat",
+      "type": "input",
+      "description": "Generate heartbeat messages",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "http",
+      "type": "input",
+      "description": "Receive single or multiline events over http(s)",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        },
+        {
+          "name": "port",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "http_poller",
+      "type": "input",
+      "description": "Call an HTTP API, decode the output of it into event(s), and send them on their merry way",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "jdbc",
+      "type": "input",
+      "description": "Ingest data in any database with a JDBC interface into Logstash",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "kafka",
+      "type": "input",
+      "description": "Read events from a Kafka topic",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "rabbitmq",
+      "type": "input",
+      "description": "Pull events from a RabbitMQ queue",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "redis",
+      "type": "input",
+      "description": "Read events from a Redis instance",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "s3",
+      "type": "input",
+      "description": "Stream events from files from a S3 bucket",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "stdin",
+      "type": "input",
+      "description": "Read events from standard input",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "syslog",
+      "type": "input",
+      "description": "Read syslog messages as events over the network",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "tcp",
+      "type": "input",
+      "description": "Read events over a TCP socket",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "udp",
+      "type": "input",
+      "description": "Read messages as events over the network via udp",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+
+
+
+    {
+      "name": "csv",
+      "type": "filter",
+      "description": "The CSV filter takes an event field containing CSV data, parses it, and stores it as individual fields",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "date",
+      "type": "filter",
+      "description": "Used for parsing dates from fields, and then using that date or timestamp as the logstash timestamp for the event",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "dissect",
+      "type": "filter",
+      "description": "Kind of split operation. Unlike a regular split operation where one delimiter is applied to the whole string, this operation applies a set of delimiters to a string value",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "dns",
+      "type": "filter",
+      "description": "Performs either an A record/CNAME record lookup or a reverse lookup at the PTR record",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "drop",
+      "type": "filter",
+      "description": "Drops everything that gets to this filter",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        },
+        {
+          "name": "percentage",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "elasticsearch",
+      "type": "filter",
+      "description": "Search Elasticsearch for a previous log event and copy some fields from it into the current event",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "fingerprint",
+      "type": "filter",
+      "description": "Create consistent hashes (fingerprints) of one or more fields and store the result in a new field",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "geoip",
+      "type": "filter",
+      "description": "Adds information about the geographical location of IP addresses, based on data from the Maxmind GeoLite2 databases",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        },
+        {
+          "name": "source",
+          "type": "string",
+          "isRequired": true
+        },
+        {
+          "name": "target",
+          "type": "string",
+          "defaultValue": "geoip"
+        },
+        {
+          "name": "cache_size",
+          "type": "number",
+          "defaultValue": 1000
+        },
+        {
+          "name": "default_database_type",
+          "type": "string",
+          "oneOf": [ "City", "ASN" ],
+          "defaultValue": "City"
+        }
+      ]
+    },
+    {
+      "name": "grok",
+      "type": "filter",
+      "description": "Parse arbitrary text and structure it",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        },
+        {
+          "name": "match",
+          "type": "hash"
+        },
+        {
+          "name": "timeout_millis",
+          "type": "number"
+        },
+        {
+          "name": "named_captures_only",
+          "type": "boolean"
+        },
+        {
+          "name": "keep_empty_captures",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "jdbc_static",
+      "type": "filter",
+      "description": "Best suited for event enhancement from static or reference data that does not change very often",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "jdbc_streaming",
+      "type": "filter",
+      "description": "Executes a SQL query and store the result set in the field specified as target. It will cache the results locally in an LRU cache with expiry",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "json",
+      "type": "filter",
+      "description": "Takes an existing field which contains JSON and expands it into an actual data structure within the Logstash event",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "kv",
+      "type": "filter",
+      "description": "Helps automatically parse messages (or specific event fields) which are of the foo=bar variety",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "mutate",
+      "type": "filter",
+      "description": "Allows you to perform general mutations on fields. You can rename, remove, replace, and modify fields in your events",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "ruby",
+      "type": "filter",
+      "description": "Execute ruby code",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "sleep",
+      "type": "filter",
+      "description": "Sleep a given amount of time",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "split",
+      "type": "filter",
+      "description": "Clones an event by splitting one of its fields and placing each value resulting from the split into a clone of the original event",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "syslog_pri",
+      "type": "filter",
+      "description": "Parse the PRI field from the front of a Syslog (RFC3164) message",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "translate",
+      "type": "filter",
+      "description": "A general search and replace tool that uses a configured hash and/or a file to determine replacement values",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "truncate",
+      "type": "filter",
+      "description": "Truncate fields longer than a given length",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "urldecode",
+      "type": "filter",
+      "description": "Decode fields that are urlencoded",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "useragent",
+      "type": "filter",
+      "description": "Parse user agent strings into structured data based on BrowserScope data",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "uuid",
+      "type": "filter",
+      "description": "Generate a UUID and add it as a field to each processed event",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "xml",
+      "type": "filter",
+      "description": "Takes a field that contains XML and expands it into an actual datastructure",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+
+
+
+    {
+      "name": "elasticsearch",
+      "type": "output",
+      "description": "Store events in Elasticsearch",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        },
+        {
+          "name": "hosts",
+          "type": "uri",
+          "defaultValue": "127.0.0.1"
+        },
+        {
+          "name": "user",
+          "type": "string"
+        },
+        {
+          "name": "password",
+          "type": "password"
+        },
+        {
+          "name": "ssl",
+          "type": "boolean"
+        },
+        {
+          "name": "index",
+          "type": "string",
+          "defaultValue": "logstash-%{+YYYY.MM.dd}"
+        },
+        {
+          "name": "manage_template",
+          "type": "boolean",
+          "defaultValue": true
+        },
+        {
+          "name": "template_overwrite",
+          "type": "boolean",
+          "defaultValue": false
+        },
+        {
+          "name": "timeout",
+          "type": "number",
+          "defaultValue": 60
+        },
+        {
+          "name": "document_id",
+          "type": "string"
+        },
+        {
+          "name": "parent",
+          "type": "string"
+        },
+        {
+          "name": "pipeline",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "email",
+      "type": "output",
+      "description": "Sends email when an output is received",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "file",
+      "type": "output",
+      "description": "Writes events to files on disk",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "http",
+      "type": "output",
+      "description": "Send events to a generic HTTP(S) endpoint",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "kafka",
+      "type": "output",
+      "description": "Write events to a Kafka topic",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "rabbitmq",
+      "type": "output",
+      "description": "Push events to a RabbitMQ exchange",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "redis",
+      "type": "output",
+      "description": "Send events to a Redis queue using RPUSH",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "s3",
+      "type": "output",
+      "description": "Batches and uploads logstash events into Amazon Simple Storage Service (Amazon S3)",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        },
+        {
+          "name": "region",
+          "type": "string",
+          "defaultValue": "us-east-1"
+        },
+        {
+          "name": "bucket",
+          "type": "string",
+          "isRequired": true
+        },
+        {
+          "name": "access_key_id",
+          "type": "string"
+        },
+        {
+          "name": "secret_access_key",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "stdout",
+      "type": "output",
+      "description": "A simple output which prints to the STDOUT of the shell running Logstash",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        },
+        {
+          "name": "codec",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "tcp",
+      "type": "output",
+      "description": "Write events over a TCP socket",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "udp",
+      "type": "output",
+      "description": "Send events over UDP",
+      "settings": [
+        {
+          "name": "id",
+          "type": "string",
+          "isRequired": true
+        }
+      ]
+    }
+  ]
+}

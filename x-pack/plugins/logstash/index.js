@@ -25,7 +25,8 @@ export const logstash = (kibana) => new kibana.Plugin({
   uiExports: {
     managementSections: [
       'plugins/logstash/sections/pipeline_list',
-      'plugins/logstash/sections/pipeline_edit'
+      'plugins/logstash/sections/pipeline_edit',
+      'plugins/logstash/sections/pipeline_builder'
     ],
     home: ['plugins/logstash/lib/register_home_feature']
   },
