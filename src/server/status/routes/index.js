@@ -20,3 +20,4 @@
 export { registerStatusPage } from './page/register_status';
 export { registerStatusApi } from './api/register_status';
 export { registerStatsApi } from './api/register_stats';
+export { registerSettingsApi } from './api/register_settings';

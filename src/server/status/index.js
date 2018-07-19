@@ -19,7 +19,7 @@
 
 import ServerStatus from './server_status';
 import { Metrics } from './lib/metrics';
-import { registerStatusPage, registerStatusApi, registerStatsApi } from './routes';
+import { registerStatusPage, registerStatusApi, registerStatsApi, registerSettingsApi } from './routes';
 import { getOpsStatsCollector } from './collectors';
 
 export function statusMixin(kbnServer, server, config) {
@@ -43,4 +43,5 @@ export function statusMixin(kbnServer, server, config) {
   registerStatusPage(kbnServer, server, config);
   registerStatusApi(kbnServer, server, config);
   registerStatsApi(kbnServer, server, config);
+  registerSettingsApi(kbnServer, server, config);
 }
